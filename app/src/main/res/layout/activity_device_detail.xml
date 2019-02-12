@@ -7,20 +7,40 @@
     android:background="@drawable/b3"
     tools:context=".DeviceDetailActivity">
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:id="@+id/textViewD"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Device Details"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:text="Apple"
+        android:textColor="#000"
+        android:textSize="40dp" />
+
+    <ImageView
+        android:id="@+id/imageViewD"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/apple"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp" />
+
+
+    <Button
+        android:id="@+id/edtLogoutD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
         android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="12pt"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="137dp" />
+        android:textSize="8pt"/>
+</RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

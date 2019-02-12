@@ -16,56 +16,53 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     //initializing variables
-    private Button Login;
     private Button Register;
+    private Button Login;
     private EditText Email;
     private EditText Password;
-    private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         //creating variables and getting current user
         firebaseAuth=FirebaseAuth.getInstance();
-
         if(firebaseAuth.getCurrentUser()!=null){
             //finish();
-            startActivity(new Intent(LoginActivity.this,ListActivity.class));
+            startActivity(new Intent(RegisterActivity.this,ListActivity.class));
         }
-
         progressDialog=new ProgressDialog(this);
-        Login=(Button) findViewById(R.id.edtLogin); //casting with button?
-        Register=(Button)findViewById(R.id.edtRegister);
-        Email=(EditText)findViewById(R.id.edtEmail);
-        Password=(EditText)findViewById(R.id.edtPassword);
-
-        //Login click
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-            }
-        });
+        Register=(Button)findViewById(R.id.edtRegisterR);
+        Login=(Button)findViewById(R.id.edtLoginR);
+        Email=(EditText)findViewById(R.id.edtEmailR);
+        Password=(EditText)findViewById(R.id.edtPasswordR);
 
         //register click
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                Intent clkRegister=new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivity(clkRegister);
+                registration();
+            }
+        });
+
+        //login click
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent clkbacktologin=new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(clkbacktologin);
             }
         });
     }
 
-    //login method
-    private void login(){
+    //registration method
+    private void registration(){
         String email=Email.getText().toString().trim();
         String password=Password.getText().toString().trim();
 
@@ -79,25 +76,23 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this,"Please Enter Password",Toast.LENGTH_LONG).show();
             return;
         }
-        progressDialog.setMessage("Logging In,Please Wait...");
+        progressDialog.setMessage("Registering,Please Wait...");
         progressDialog.show();
 
-        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
                 if(task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(LoginActivity.this,ListActivity.class));
+                    Intent openList=new Intent(RegisterActivity.this,ListActivity.class);
+                    startActivity(openList);
                 }
                 else{
-                    Toast.makeText(LoginActivity.this,"Could Not Log In...Please Try Again",Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this,"Could Not Register...Please Try Again",Toast.LENGTH_LONG).show();
                 }
+
             }
         });
-
-        }
-
-
     }
-
+}

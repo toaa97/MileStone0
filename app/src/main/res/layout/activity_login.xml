@@ -5,29 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
+    
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ombre">
+
+    <TextView
+        android:id="@+id/edtWelcome"
+        android:layout_width="130pt"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="WELCOME!"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="25pt"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/edtAccText"
+        android:layout_width="130pt"
+        android:layout_height="wrap_content"
+        android:text="Don't Have An Account? Register"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="8pt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"/>
+
+    <Button
+        android:id="@+id/edtRegister"
+        android:layout_width="90pt"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="530dp"
+        android:background="@color/colorAccent"
+        android:text="Register"
+        android:textColor="@android:color/white"
+        android:textSize="13pt" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ombre"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-
-        <EditText
-            android:id="@+id/edtWelcome"
-            android:layout_width="130pt"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="WELCOME!"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="25pt"
-            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edtEmail"
@@ -51,11 +80,12 @@
             android:id="@+id/edtLogin"
             android:layout_width="130pt"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:background="@color/colorAccent"
             android:text="Login"
             android:textColor="@android:color/white"
-            android:textSize="15pt"
-            android:textStyle="bold" />
+            android:textSize="13pt" />
+
 
     </LinearLayout>
+</RelativeLayout>
 </android.support.constraint.ConstraintLayout>

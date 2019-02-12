@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b3">
+    <TextView
+        android:id="@+id/edtWRegister"
+        android:layout_width="130pt"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textColor="@android:color/white"
+        android:textSize="25pt"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/edtBackLogin"
+        android:layout_width="130pt"
+        android:layout_height="wrap_content"
+        android:text="Already Have An Account?"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="8pt"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="461dp"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/edtLoginR"
+        android:layout_width="90pt"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Login Here"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="10pt"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="480dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="530dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <EditText
+            android:id="@+id/edtEmailR"
+            android:layout_width="130pt"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:textSize="10pt"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="193dp" />
+
+        <EditText
+            android:id="@+id/edtPasswordR"
+            android:layout_width="130pt"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="10pt"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="278dp" />
+
+        <Button
+            android:id="@+id/edtRegisterR"
+            android:layout_width="130pt"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Register"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="13pt"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="375dp" />
+
+
+
+    </LinearLayout>
+</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

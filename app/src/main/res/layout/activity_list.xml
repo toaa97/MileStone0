@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b3"
-    tools:context=".ListActivity">
+    android:orientation="vertical"
+    android:background="@drawable/b3">
+
 
     <ListView
-        android:id="@+id/edtListView"
+        android:id="@+id/edtCustomList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="550dp" />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+    <Button
+        android:id="@+id/edtLogoutL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_centerInParent="true"
-        android:textAlignment="center"/>
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:textSize="8pt"/>
+
 </RelativeLayout>
+</LinearLayout>
