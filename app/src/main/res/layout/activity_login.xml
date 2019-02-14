@@ -85,6 +85,25 @@
             android:textColor="@android:color/white"
             android:textSize="13pt" />
 
+        <TextView
+            android:id="@+id/edtOr"
+            android:layout_width="130pt"
+            android:layout_height="wrap_content"
+            android:text="or"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="10pt"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:id="@+id/edtGoogle"
+            android:layout_width="130pt"
+            android:layout_height="50dp"
+            android:background="@drawable/google" />
+
+
+
 
     </LinearLayout>
 </RelativeLayout>

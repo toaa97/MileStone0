@@ -13,6 +13,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ListActivity extends AppCompatActivity {
@@ -22,6 +27,7 @@ public class ListActivity extends AppCompatActivity {
     String[] names={"Android","iPhone","Windows","Blackberry","Linux"};
     private Button Logout;
     private FirebaseAuth firebaseAuth;
+    private GoogleApiClient mGoogleSignInClient;
 
 
     @Override
@@ -51,9 +57,17 @@ public class ListActivity extends AppCompatActivity {
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firebaseAuth.signOut();
-                finish();
-                startActivity(new Intent(ListActivity.this,LoginActivity.class));
+                Auth.GoogleSignInApi.signOut(mGoogleSignInClient).setResultCallback(
+                        new ResultCallback<Status>() {
+                            @Override
+                            public void onResult(Status status) {
+                                // ...
+                                Toast.makeText(getApplicationContext(),"Logged Out",Toast.LENGTH_SHORT).show();
+                                firebaseAuth.signOut();
+                                Intent i=new Intent(getApplicationContext(),LoginActivity.class);
+                                startActivity(i);
+                            }
+                        });
             }
         });
     }
@@ -95,5 +109,19 @@ public class ListActivity extends AppCompatActivity {
 
             return convertView;
         }
+    }
+
+    //getting user
+    @Override
+    protected void onStart(){
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("874551466482-tjvm46r9lsvnj1k5k4qefs8ocmj5po1r.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = new GoogleApiClient.Builder(this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+        mGoogleSignInClient.connect();
+        super.onStart();
     }
 }
