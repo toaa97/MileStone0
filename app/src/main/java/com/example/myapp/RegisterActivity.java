@@ -23,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button Login;
     private EditText Email;
     private EditText Password;
+    private EditText confirmPass;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
@@ -42,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         Login=(Button)findViewById(R.id.edtLoginR);
         Email=(EditText)findViewById(R.id.edtEmailR);
         Password=(EditText)findViewById(R.id.edtPasswordR);
+        confirmPass=(EditText)findViewById(R.id.edtConfirmPassR);
 
         //register click
         Register.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void registration(){
         String email=Email.getText().toString().trim();
         String password=Password.getText().toString().trim();
+        String confirm=confirmPass.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Please Enter Email",Toast.LENGTH_LONG).show();
@@ -74,6 +77,17 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Please Enter Password",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+
+        if(TextUtils.isEmpty(confirm)) {
+            Toast.makeText(this, "Please Confirm Password", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(!(password.equals(confirm))){
+            Toast.makeText(this,"Passwords Don't Match...Re-enter Password",Toast.LENGTH_LONG).show();
             return;
         }
         progressDialog.setMessage("Registering,Please Wait...");

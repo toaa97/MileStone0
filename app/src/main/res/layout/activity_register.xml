@@ -82,6 +82,18 @@
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="278dp" />
 
+
+        <EditText
+            android:id="@+id/edtConfirmPassR"
+            android:layout_width="130pt"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textSize="10pt"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="278dp" />
+
         <Button
             android:id="@+id/edtRegisterR"
             android:layout_width="130pt"
