@@ -110,3 +110,4 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 }
+//BaseAdapter as the name suggests, is a base class for all the adapters.

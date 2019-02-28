@@ -44,6 +44,7 @@ public class DeviceDetailActivity extends AppCompatActivity {
 
 
         //getting image and text
+        //software mechanism that allows users to coordinate the functions of different activities to achieve a task.
         Intent intent = getIntent();
         name.setText(intent.getStringExtra("name"));
         image.setImageResource((intent.getIntExtra("image", 0)));

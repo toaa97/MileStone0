@@ -35,19 +35,29 @@ public class LoginActivity extends AppCompatActivity {
     private Button googleSignIn;
     private EditText Email;
     private EditText Password;
+    //provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    //RC_SIGN in is the request code you will assign for starting the new activity. this can be any number.
+    // When the user is done with the subsequent activity and returns, the system calls your activity's onActivityResult() method
     private static final int  RC_SIGN_IN=1;
+    //google user
     public GoogleApiClient mGoogleSignInClient;
+    //They show up in the "tag" column in LogCat, where it can be used for searching and filtering messages.
+    // The function is just passing them through.
     private static final String TAG="LoginActivity";
 
 
     @Override
+    //onCreate(Bundle) is where you initialize your activity.
     protected void onCreate(Bundle savedInstanceState) {
+        //The savedInstanceState is a reference to a Bundle object that is passed into the onCreate method of every Android Activity.
+        // Activities have the ability, under special circumstances, to restore themselves to a previous state using the data stored in this bundle
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         //creating variables and getting current user
+        //obtain an instance of this class
         firebaseAuth=FirebaseAuth.getInstance();
 
         if(firebaseAuth.getCurrentUser()!=null){
@@ -55,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this,ListActivity.class));
         }
 
+        //ProgressDialog is a modal dialog, which prevents the user from interacting with the app.
         progressDialog=new ProgressDialog(this);
         Login=(Button) findViewById(R.id.edtLogin); //casting with button?
         Register=(Button)findViewById(R.id.edtRegister);
@@ -166,9 +177,12 @@ public class LoginActivity extends AppCompatActivity {
 
     //login method
     private void login(){
+        //eliminates leading and trailing spaces
         String email=Email.getText().toString().trim();
         String password=Password.getText().toString().trim();
 
+
+        //it is simply a set of utility functions to do operations on String objects
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Please Enter Email",Toast.LENGTH_LONG).show();
             return;

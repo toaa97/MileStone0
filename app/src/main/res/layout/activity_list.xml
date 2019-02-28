@@ -10,20 +10,45 @@
         android:id="@+id/edtCustomList"
         android:layout_width="match_parent"
         android:layout_height="550dp" />
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center">
-    <Button
-        android:id="@+id/edtLogoutL"
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
-        android:textColor="@android:color/white"
-        android:textAlignment="center"
-        android:textSize="8pt"/>
+        android:layout_gravity="center">
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/edtLogoutL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Log Out"
+            android:layout_marginLeft="250dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="8pt" />
+
+        <Button
+            android:id="@+id/edtSettingL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Settings"
+            android:layout_marginRight="250dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="8pt" />
+
+
+        <Button
+            android:id="@+id/edtScanL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Scan"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="8pt" />
+
+    </RelativeLayout>
 </LinearLayout>
