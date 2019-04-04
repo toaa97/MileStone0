@@ -11,24 +11,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <TextView
-        android:id="@+id/textViewD"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtCC"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
-        android:text="Apple"
-        android:textColor="#000"
-        android:textSize="40dp" />
+        android:textSize="30sp"
+        android:text="Celsius:"/>
 
-    <ImageView
-        android:id="@+id/imageViewD"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/apple"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp" />
+    <TextView
+        android:id="@+id/txtFF"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="250dp"
+        android:textSize="30sp"
+        android:text="Fahrenheit:"/>
 
+
+    <TextView
+        android:id="@+id/txtC"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="150dp"
+        android:textSize="30sp"
+        android:hint="temp"/>
+
+    <TextView
+        android:id="@+id/txtF"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="250dp"
+        android:textSize="30sp"
+        android:hint="temp"/>
 
     <Button
         android:id="@+id/edtLogoutD"

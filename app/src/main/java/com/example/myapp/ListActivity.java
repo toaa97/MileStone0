@@ -46,7 +46,7 @@ import java.util.List;
 public class ListActivity extends AppCompatActivity {
 
     //initializing variables
-    int[] images={R.drawable.wifi};
+    int images=R.drawable.wifi;
     String[] names={"Android","iPhone","Windows","Blackberry","Linux"};
     private Button Logout;
     private FirebaseAuth firebaseAuth;
@@ -105,7 +105,7 @@ public class ListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent= new Intent(getApplicationContext(),DeviceDetailActivity.class);
                 intent.putExtra("name", ssid.get(position));
-                intent.putExtra("image",images[0]);
+                //intent.putExtra("image",images);
                 startActivity(intent);
             }
         });
@@ -231,7 +231,7 @@ public class ListActivity extends AppCompatActivity {
             TextView textView=(TextView)convertView.findViewById(R.id.edtText);
             TextView textBSSID=(TextView)convertView.findViewById(R.id.edtBSSID);
 
-            imageView.setImageResource(images[0]);
+            imageView.setImageResource(images);
             textView.setText("SSID: "+ssid.get(position));
             textBSSID.setText("Mac Address: "+bssid.get(position));
 
